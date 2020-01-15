@@ -253,9 +253,9 @@ spec:
 {{end}}
           ports:
           - name: http
-            containerPort: 80
+            containerPort: {{with (index .ExtraArgs "http-port")}}{{.}}{{else}}80{{end}}
           - name: https
-            containerPort: 443
+            containerPort: {{with (index .ExtraArgs "https-port")}}{{.}}{{else}}443{{end}}
           livenessProbe:
             failureThreshold: 3
             httpGet:
@@ -612,9 +612,9 @@ spec:
 {{end}}
           ports:
           - name: http
-            containerPort: 80
+            containerPort: {{with (index .ExtraArgs "http-port")}}{{.}}{{else}}80{{end}}
           - name: https
-            containerPort: 443
+            containerPort: {{with (index .ExtraArgs "https-port")}}{{.}}{{else}}443{{end}}
           livenessProbe:
             failureThreshold: 3
             httpGet:
