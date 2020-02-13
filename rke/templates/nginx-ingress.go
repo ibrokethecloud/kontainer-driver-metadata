@@ -229,7 +229,9 @@ spec:
             - --annotations-prefix=nginx.ingress.kubernetes.io
           {{ range $k, $v := .ExtraArgs }}
             - --{{ $k }}{{if ne $v "" }}={{ $v }}{{end}}
-          {{ end }}
+          {{- end }}
+            - --http-port={{if .HttpPort}}{{.HttpPort}}{{else}}80{{end}}
+            - --https-port={{if .HttpsPort}}{{.HttpsPort}}{{else}}443{{end}}
           {{- if eq .AlpineImage ""}}
           securityContext:
             capabilities:
@@ -253,9 +255,9 @@ spec:
 {{end}}
           ports:
           - name: http
-            containerPort: {{with (index .ExtraArgs "http-port")}}{{.}}{{else}}80{{end}}
+            containerPort: {{if .HttpPort}}{{.HttpPort}}{{else}}80{{end}}
           - name: https
-            containerPort: {{with (index .ExtraArgs "https-port")}}{{.}}{{else}}443{{end}}
+            containerPort: {{if .HttpsPort}}{{.HttpsPort}}{{else}}443{{end}}
           livenessProbe:
             failureThreshold: 3
             httpGet:
@@ -588,7 +590,9 @@ spec:
             - --annotations-prefix=nginx.ingress.kubernetes.io
           {{ range $k, $v := .ExtraArgs }}
             - --{{ $k }}{{if ne $v "" }}={{ $v }}{{end}}
-          {{ end }}
+          {{- end }}
+            - --http-port={{if .HttpPort}}{{.HttpPort}}{{else}}80{{end}}
+            - --https-port={{if .HttpsPort}}{{.HttpsPort}}{{else}}443{{end}}
           {{- if eq .AlpineImage ""}}
           securityContext:
             capabilities:
@@ -612,9 +616,9 @@ spec:
 {{end}}
           ports:
           - name: http
-            containerPort: {{with (index .ExtraArgs "http-port")}}{{.}}{{else}}80{{end}}
+            containerPort: {{if .HttpPort}}{{.HttpPort}}{{else}}80{{end}}
           - name: https
-            containerPort: {{with (index .ExtraArgs "https-port")}}{{.}}{{else}}443{{end}}
+            containerPort: {{if .HttpsPort}}{{.HttpsPort}}{{else}}443{{end}}
           livenessProbe:
             failureThreshold: 3
             httpGet:
