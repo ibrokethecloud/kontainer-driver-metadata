@@ -16,6 +16,7 @@ const (
 	MetricsServer = "metricsServer"
 	NginxIngress  = "nginxIngress"
 	TemplateKeys  = "templateKeys"
+	HelmController = "helmController"
 
 	calicov18  = "calico-v1.8"
 	calicov113 = "calico-v1.13"
@@ -47,6 +48,8 @@ const (
 
 	nginxIngressv18  = "nginxingress-v1.8"
 	nginxIngressV115 = "nginxingress-v1.15"
+
+	helmControllerv116 = "helmController-v1.16"
 )
 
 func LoadK8sVersionedTemplates() map[string]map[string]string {
@@ -94,6 +97,9 @@ func LoadK8sVersionedTemplates() map[string]map[string]string {
 			">=1.15.0-rancher0 <=1.15.3-rancher1-1": nginxIngressv18,
 			">=1.15.3-rancher2":                     nginxIngressV115,
 		},
+		HelmController: {
+			">=1.16.1-rancher1-1": helmControllerv116,
+		},
 		TemplateKeys: getTemplates(),
 	}
 }
@@ -130,5 +136,7 @@ func getTemplates() map[string]string {
 
 		nginxIngressv18:  NginxIngressTemplate,
 		nginxIngressV115: NginxIngressTemplateV0251Rancher1,
+
+		helmControllerv116: HelmControllerTemplate,
 	}
 }

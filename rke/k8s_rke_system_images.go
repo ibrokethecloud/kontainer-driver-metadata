@@ -1,6 +1,8 @@
 package rke
 
-import v3 "github.com/rancher/types/apis/management.cattle.io/v3"
+import (
+	v3 "github.com/rancher/types/apis/management.cattle.io/v3"
+)
 
 func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 	return map[string]v3.RKESystemImages{
@@ -1777,6 +1779,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			CoreDNS:                   m("coredns/coredns:1.6.2"),
 			CoreDNSAutoscaler:         m("gcr.io/google_containers/cluster-proportional-autoscaler:1.7.1"),
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.3"),
+			HelmController:            m("rancher/helm-controller:v0.4.1"),
 		},
 		// Experimental in Rancher v2.3.0
 		"v1.16.2-rancher1-1": {
@@ -1809,6 +1812,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			CoreDNS:                   m("coredns/coredns:1.6.2"),
 			CoreDNSAutoscaler:         m("gcr.io/google_containers/cluster-proportional-autoscaler:1.7.1"),
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.3"),
+			HelmController:            m("rancher/helm-controller:v0.4.1"),
 		},
 		// Experimental in Rancher v2.3.0
 		"v1.16.2-rancher2-1": {
@@ -1841,6 +1845,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			CoreDNS:                   m("coredns/coredns:1.6.2"),
 			CoreDNSAutoscaler:         m("gcr.io/google_containers/cluster-proportional-autoscaler:1.7.1"),
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.3"),
+			HelmController:            m("rancher/helm-controller:v0.4.1"),
 		},
 		// Enabled in Rancher v2.3.3
 		"v1.16.3-rancher1-1": {
@@ -1873,6 +1878,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			CoreDNS:                   m("coredns/coredns:1.6.2"),
 			CoreDNSAutoscaler:         m("gcr.io/google_containers/cluster-proportional-autoscaler:1.7.1"),
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.3"),
+			HelmController:            m("rancher/helm-controller:v0.4.1"),
 		},
 		// Enabled in Rancher v2.3.4
 		"v1.16.4-rancher1-1": {
@@ -1905,6 +1911,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			CoreDNS:                   m("coredns/coredns:1.6.2"),
 			CoreDNSAutoscaler:         m("gcr.io/google_containers/cluster-proportional-autoscaler:1.7.1"),
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.3"),
+			HelmController:            m("rancher/helm-controller:v0.4.1"),
 		},
 		// Out of band post v2.3.4
 		"v1.16.6-rancher1-1": {
@@ -1937,6 +1944,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			CoreDNS:                   m("coredns/coredns:1.6.2"),
 			CoreDNSAutoscaler:         m("gcr.io/google_containers/cluster-proportional-autoscaler:1.7.1"),
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.3"),
+			HelmController:            m("rancher/helm-controller:v0.4.1"),
 		},
 		// Out of band post v2.3.4 for calicoCtl
 		"v1.16.6-rancher1-2": {
@@ -1970,6 +1978,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			CoreDNS:                   m("coredns/coredns:1.6.2"),
 			CoreDNSAutoscaler:         m("gcr.io/google_containers/cluster-proportional-autoscaler:1.7.1"),
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.3"),
+			HelmController:            m("rancher/helm-controller:v0.4.1"),
 		},
 		//Experimental out of band
 		"v1.17.0-rancher1-1": {
@@ -2002,6 +2011,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			CoreDNS:                   m("coredns/coredns:1.6.5"),
 			CoreDNSAutoscaler:         m("gcr.io/google_containers/cluster-proportional-autoscaler:1.7.1"),
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.3"),
+			HelmController:            m("rancher/helm-controller:v0.4.1"),
 		},
 		//Enabled in Rancher v2.3.4
 		"v1.17.0-rancher1-2": {
@@ -2034,6 +2044,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			CoreDNS:                   m("coredns/coredns:1.6.5"),
 			CoreDNSAutoscaler:         m("gcr.io/google_containers/cluster-proportional-autoscaler:1.7.1"),
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.3"),
+			HelmController:            m("rancher/helm-controller:v0.4.1"),
 		},
 		// Out of band post v2.3.4
 		"v1.17.2-rancher1-1": {
@@ -2066,6 +2077,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			CoreDNS:                   m("coredns/coredns:1.6.5"),
 			CoreDNSAutoscaler:         m("gcr.io/google_containers/cluster-proportional-autoscaler:1.7.1"),
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.3"),
+			HelmController:            m("rancher/helm-controller:v0.4.1"),
 		},
 		// Out of band post v2.3.4 for calicoCtl
 		"v1.17.2-rancher1-2": {
@@ -2099,6 +2111,7 @@ func loadK8sRKESystemImages() map[string]v3.RKESystemImages {
 			CoreDNS:                   m("coredns/coredns:1.6.5"),
 			CoreDNSAutoscaler:         m("gcr.io/google_containers/cluster-proportional-autoscaler:1.7.1"),
 			WindowsPodInfraContainer:  m("rancher/kubelet-pause:v0.1.3"),
+			HelmController:            m("rancher/helm-controller:v0.4.1"),
 		},
 		// k8s version from 2.1.x release with old rke-tools to allow upgrade from 2.1.x clusters
 		// without all clusters being restarted
